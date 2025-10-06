@@ -92,7 +92,7 @@ git clone https://github.com/Sizzarr/kripto-20251-230202812.git
 ## 6. Hasil dan Pembahasan
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
 
-![Setup GitHubi](https://github.com/indrafata980/kriptografi-202501-230202812/blob/main/praktikum/week1-intro-cia/screenshots/%7B0AC4ECB9-68A1-48C1-8EA0-334B3F5E3226%7D.png)
+![Setup GitHubi](https://github.com/Sizzarr/kriptografi-202501-230202812/blob/main/praktikum/week1-intro-cia/screenshots/repo_setup.png)
 
 ## 7. Jawaban Pertanyaan
 (Jawab pertanyaan diskusi yang diberikan pada modul.  
