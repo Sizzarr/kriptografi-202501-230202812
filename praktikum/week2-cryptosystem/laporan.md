@@ -1,14 +1,17 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 2
+Topik: 02_cryptosystem
+Nama: Indra Fata Nizar Azizi    
+NIM: 230202812
+Kelas: 5IKRA  
 
 ---
 
 ## 1. Tujuan
 (Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Mengidentifikasi komponen dasar kriptosistem (plaintext, ciphertext, kunci, algoritma).
+2. Menggambarkan proses enkripsi dan dekripsi sederhana.
+3. Mengklasifikasikan jenis kriptosistem (simetris dan asimetris).
 
 ---
 
@@ -19,19 +22,67 @@ Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
+- Python 3.14.0  
+- Visual Studio Code
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Library tambahan (misalnya pycryptodome, jika diperlukan)  
 
 ---
 
 ## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+Langkah 1 — Membuat Skema Kriptosistem
+Buat diagram sederhana (bisa pakai draw.io, excalidraw, atau digambar lalu screenshot) dengan elemen:
+Plaintext → [Algoritma + Kunci] → Ciphertext
+Ciphertext → [Algoritma + Kunci] → Plaintext
+Simpan diagram di folder screenshots/diagram_kriptosistem.png.
+Lampirkan ke laporan menggunakan Markdown:
+![Diagram Kriptosistem](screenshots/diagram_kriptosistem.png)
+Langkah 2 — Implementasi Program Sederhana
+Tulis program Python untuk simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar Cipher).
+
+# file: praktikum/week2-cryptosystem/src/simple_crypto.py
+
+def encrypt(plaintext, key):
+    result = ""
+    for char in plaintext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift + key) % 26 + shift)
+        else:
+            result += char
+    return result
+
+def decrypt(ciphertext, key):
+    result = ""
+    for char in ciphertext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift - key) % 26 + shift)
+        else:
+            result += char
+    return result
+
+if __name__ == "__main__":
+    message = "<nim><nama>"
+    key = 5
+
+    enc = encrypt(message, key)
+    dec = decrypt(enc, key)
+
+    print("Plaintext :", message)
+    print("Ciphertext:", enc)
+    print("Decrypted :", dec)
+Ekspektasi keluaran:
+
+Plaintext : Cryptosystem Test
+Ciphertext: Hwduytxzjxytr Yjxy
+Decrypted : Cryptosystem Test
+
+Langkah 3 — Klasifikasi Simetris & Asimetris
+Tambahkan penjelasan di laporan mengenai perbedaan kriptografi simetris dan asimetris.
+Sertakan minimal 1 contoh algoritma dari masing-masing:
+Simetris → AES, DES
+Asimetris → RSA, ECC
 
 ---
 
@@ -65,8 +116,14 @@ Hasil eksekusi program Caesar Cipher:
 
 ## 7. Jawaban Pertanyaan
 (Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
+- Pertanyaan 1: plaintext,chipertext,algoritma,key
+- Pertanyaan 2: Keunggulan dari symmetric key cryptography adalah proses enkripsi dan dekripsinya relatif cepat dibandingkan dengan jenis
+kriptografi lainnya. Namun, kekurangan dari metode ini adalah distribusi kunci yang aman dikarenakan kriptografi simetris memiliki
+kunci enkripsi dan dekripsi yang sama maka penggunaan kriptografi simetris rentan terhadap kebocoran apabila si penyadap mengetahui kuncinya.
+- Pertanyaan 3: karena saat distribusi kunci terdapat Penyadap (eavesdropper), penyadap adalah orang yang mencoba menangkap pesan selama
+ditransmisikan. Tujuan penyadap adalah untuk mendapatkan informasi sebanyakbanyaknya mengenai sistem kriptografi yang digunakan untuk berkomunikasi
+dengan maksud untuk memecahkan cipherteks dikarenakan kriptografi simetris memiliki kunci enkripsi dan dekripsi yang sama maka penggunaan
+kriptografi simetris rentan terhadap kebocoran apabila si penyadap mengetahui kuncinya.
 )
 ---
 
@@ -87,7 +144,7 @@ Contoh:
 (Tuliskan bukti commit Git yang relevan.  
 Contoh:
 ```
-commit abc12345
+02_cryptosystem
 Author: Nama Mahasiswa <email>
 Date:   2025-09-20
 
