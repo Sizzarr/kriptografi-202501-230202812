@@ -1,8 +1,9 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: 2
-Topik: 02_cryptosystem
-Nama: Indra Fata Nizar Azizi    
-NIM: 230202812
+
+Minggu ke-: 2  
+Topik: week2-02_cryptosystem    
+Nama: Indra Fata Nizar Azizi   
+NIM: 230202812  
 Kelas: 5IKRA  
 
 ---
@@ -25,13 +26,12 @@ Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
 - Python 3.14.0  
 - Visual Studio Code
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  
 
 ---
 
 ## 4. Langkah Percobaan
 Langkah 1 — Membuat Skema Kriptosistem
-Buat diagram sederhana (bisa pakai draw.io, excalidraw, atau digambar lalu screenshot) dengan elemen:
+Buat diagram sederhana (pakai draw.io lalu screenshot) dengan elemen:
 Plaintext → [Algoritma + Kunci] → Ciphertext
 Ciphertext → [Algoritma + Kunci] → Plaintext
 Simpan diagram di folder screenshots/diagram_kriptosistem.png.
@@ -107,16 +107,14 @@ def encrypt(text, key):
 
 Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
+![Diagram Kriptosistem](screenshots/diagram_kriptosistem.png)
 )
 
 ---
 
 ## 7. Jawaban Pertanyaan
 (Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: plaintext,chipertext,algoritma,key
+- Pertanyaan 1: plaintext,chipertext,algoritma enkripsi,algoritma dekripsi,key
 - Pertanyaan 2: Keunggulan dari symmetric key cryptography adalah proses enkripsi dan dekripsinya relatif cepat dibandingkan dengan jenis
 kriptografi lainnya. Namun, kekurangan dari metode ini adalah distribusi kunci yang aman dikarenakan kriptografi simetris memiliki
 kunci enkripsi dan dekripsi yang sama maka penggunaan kriptografi simetris rentan terhadap kebocoran apabila si penyadap mengetahui kuncinya.
