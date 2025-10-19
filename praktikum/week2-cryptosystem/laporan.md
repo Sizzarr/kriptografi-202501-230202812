@@ -17,6 +17,9 @@ Kelas: 5IKRA
 ---
 
 ## 2. Dasar Teori
+Kriptografi simetris, atau secret-key cryptography, menggunakan satu kunci rahasia yang sama untuk mengenkripsi dan mendekripsi data. Metode ini sangat cepat dan efisien sehingga ideal untuk enkripsi data dalam volume besar. Namun, tantangan terbesarnya adalah distribusi kunci, di mana kunci rahasia harus dibagikan kepada penerima melalui saluran yang aman sebelum komunikasi dimulai. Contoh algoritmanya adalah AES (Advanced Encryption Standard).
+
+Kriptografi asimetris, atau public-key cryptography, mengatasi masalah distribusi kunci dengan menggunakan sepasang kunci yang saling terkait secara matematis: kunci publik dan kunci privat. Kunci publik dapat disebarkan secara bebas untuk mengenkripsi pesan, namun hanya kunci privat pasangannya (yang hanya dimiliki oleh penerima) yang dapat mendekripsinya. Metode ini secara inheren lebih aman dalam hal pertukaran kunci dan juga memungkinkan fungsi tanda tangan digital dan otentikasi. Kelemahannya adalah prosesnya jauh lebih lambat dan membutuhkan daya komputasi yang lebih besar. Contoh algoritmanya adalah RSA (Rivest–Shamir–Adleman) dan ECC (Elliptic Curve Cryptography).
 
 
 ---
@@ -29,6 +32,21 @@ Kelas: 5IKRA
 ---
 
 ## 4. Langkah Percobaan
+Langkah 1 — Membuat Skema Kriptosistem
+- Buat diagram sederhana (pakai draw.io)
+- Simpan diagram di folder `screenshots/diagram_kriptosistem.png`.  
+- Lampirkan ke laporan
+  
+Langkah 2 — Implementasi Program Sederhana
+- Tulis program Python untuk simulasi enkripsi & dekripsi menggunakan substitusi sederhana menggunakan vigenere
+
+Langkah 3 — Klasifikasi Simetris & Asimetris
+
+- Tambahkan penjelasan di laporan mengenai perbedaan kriptografi simetris dan asimetris.
+- Sertakan minimal 1 contoh algoritma dari masing-masing:
+  - Simetris → AES, DES  
+  - Asimetris → RSA, ECC  
+
 ---
 
 ## 5. Source Code
@@ -101,9 +119,9 @@ print(f"Decrypted Text: {teks_terdekripsi}")
 
 Ekspektasi keluaran:  
 ```
-Plaintext : Indra Fata Nizar Aziz
+Plaintext : Indra Fata Nizar Azizi
 Ciphertext: Snqai Pagj Vszna Ijimr
-Decrypted : Indra Fata Nizar Aziz
+Decrypted : Indra Fata Nizar Azizi
 ```
 
 ---
@@ -114,9 +132,11 @@ Decrypted : Indra Fata Nizar Aziz
 - Jelaskan apakah hasil sesuai ekspektasi.  
 - Bahas error (jika ada) dan solusinya. 
 
-Hasil eksekusi program Caesar Cipher:
-
+Diagram/skema kriptosistem dasar:
 ![Diagram Kriptosistem](screenshots/diagram_kriptosistem.png)
+
+Hasil eksekusi program vigenere:
+![Diagram Kriptosistem](screenshots/hasil_program.png)
 )
 
 ---
