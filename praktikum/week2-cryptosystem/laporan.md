@@ -1,7 +1,7 @@
 # Laporan Praktikum Kriptografi
 
 Minggu ke-: 2  
-Topik: week2-02_cryptosystem    
+Topik: cryptosystem    
 Nama: Indra Fata Nizar Azizi   
 NIM: 230202812  
 Kelas: 5IKRA  
@@ -17,8 +17,7 @@ Kelas: 5IKRA
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+
 
 ---
 
@@ -30,60 +29,6 @@ Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
 ---
 
 ## 4. Langkah Percobaan
-Langkah 1 — Membuat Skema Kriptosistem
-Buat diagram sederhana (pakai draw.io lalu screenshot) dengan elemen:
-Plaintext → [Algoritma + Kunci] → Ciphertext
-Ciphertext → [Algoritma + Kunci] → Plaintext
-Simpan diagram di folder screenshots/diagram_kriptosistem.png.
-Lampirkan ke laporan menggunakan Markdown:
-![Diagram Kriptosistem](screenshots/diagram_kriptosistem.png)
-Langkah 2 — Implementasi Program Sederhana
-Tulis program Python untuk simulasi enkripsi & dekripsi menggunakan substitusi sederhana (misalnya Caesar Cipher).
-
-# file: praktikum/week2-cryptosystem/src/simple_crypto.py
-
-def encrypt(plaintext, key):
-    result = ""
-    for char in plaintext:
-        if char.isalpha():
-            shift = 65 if char.isupper() else 97
-            result += chr((ord(char) - shift + key) % 26 + shift)
-        else:
-            result += char
-    return result
-
-def decrypt(ciphertext, key):
-    result = ""
-    for char in ciphertext:
-        if char.isalpha():
-            shift = 65 if char.isupper() else 97
-            result += chr((ord(char) - shift - key) % 26 + shift)
-        else:
-            result += char
-    return result
-
-if __name__ == "__main__":
-    message = "<nim><nama>"
-    key = 5
-
-    enc = encrypt(message, key)
-    dec = decrypt(enc, key)
-
-    print("Plaintext :", message)
-    print("Ciphertext:", enc)
-    print("Decrypted :", dec)
-Ekspektasi keluaran:
-
-Plaintext : Cryptosystem Test
-Ciphertext: Hwduytxzjxytr Yjxy
-Decrypted : Cryptosystem Test
-
-Langkah 3 — Klasifikasi Simetris & Asimetris
-Tambahkan penjelasan di laporan mengenai perbedaan kriptografi simetris dan asimetris.
-Sertakan minimal 1 contoh algoritma dari masing-masing:
-Simetris → AES, DES
-Asimetris → RSA, ECC
-
 ---
 
 ## 5. Source Code
@@ -91,11 +36,75 @@ Asimetris → RSA, ECC
 Gunakan blok kode:
 
 ```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
+def vigenere_enkripsi(plaintext, kunci):
+    ciphertext = ""
+    kunci = kunci.upper()
+    kunci_index = 0
+    
+    for char in plaintext:
+        if 'A' <= char.upper() <= 'Z':
+            # Tentukan pergeseran
+            shift = ord(kunci[kunci_index % len(kunci)]) - ord('A')
+            
+            # Tentukan base (A=0 atau a=0)
+            base = ord('A') if char.isupper() else ord('a')
+            
+            # Enkripsi: (char_index + shift) mod 26
+            enkripsi_char = chr((ord(char) - base + shift) % 26 + base)
+            ciphertext += enkripsi_char
+            
+            # Pindah ke huruf kunci berikutnya
+            kunci_index += 1
+        else:
+            # Karakter non-alfabet (spasi, tanda baca) tidak diubah
+            ciphertext += char
+            
+    return ciphertext
+
+def vigenere_dekripsi(ciphertext, kunci):
+    plaintext = ""
+    kunci = kunci.upper()
+    kunci_index = 0
+    
+    for char in ciphertext:
+        if 'A' <= char.upper() <= 'Z':
+            # Tentukan pergeseran
+            shift = ord(kunci[kunci_index % len(kunci)]) - ord('A')
+            
+            # Tentukan base (A=0 atau a=0)
+            base = ord('A') if char.isupper() else ord('a')
+            
+            # Dekripsi: (char_index - shift) mod 26
+            dekripsi_char = chr((ord(char) - base - shift) % 26 + base)
+            plaintext += dekripsi_char
+            
+            # Pindah ke huruf kunci berikutnya
+            kunci_index += 1
+        else:
+            # Karakter non-alfabet (spasi, tanda baca) tidak diubah
+            plaintext += char
+            
+    return plaintext
+
+# Contoh Penggunaan
+teks_asli = "pesan"
+kunci_vigenere = "kunci"
+teks_terenkripsi = vigenere_enkripsi(teks_asli, kunci_vigenere)
+teks_terdekripsi = vigenere_dekripsi(teks_terenkripsi, kunci_vigenere)
+
+print(f"Plaintext: {teks_asli}")
+print(f"Kunci: {kunci_vigenere}")
+print(f"Ciphertext (Vigenere): {teks_terenkripsi}")
+print(f"Decrypted Text: {teks_terdekripsi}")
 ```
 )
+
+Ekspektasi keluaran:  
+```
+Plaintext : Indra Fata Nizar Aziz
+Ciphertext: Snqai Pagj Vszna Ijimr
+Decrypted : Indra Fata Nizar Aziz
+```
 
 ---
 
