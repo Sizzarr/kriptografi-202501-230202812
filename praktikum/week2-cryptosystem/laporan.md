@@ -17,10 +17,11 @@ Kelas: 5IKRA
 ---
 
 ## 2. Dasar Teori
-Kriptografi simetris, atau secret-key cryptography, menggunakan satu kunci rahasia yang sama untuk mengenkripsi dan mendekripsi data. Metode ini sangat cepat dan efisien sehingga ideal untuk enkripsi data dalam volume besar. Namun, tantangan terbesarnya adalah distribusi kunci, di mana kunci rahasia harus dibagikan kepada penerima melalui saluran yang aman sebelum komunikasi dimulai. Contoh algoritmanya adalah AES (Advanced Encryption Standard).
+Kriptografi simetris, atau secret-key cryptography, menggunakan satu kunci rahasia yang sama untuk mengenkripsi dan mendekripsi data. Metode ini sangat cepat dan efisien sehingga ideal untuk enkripsi data dalam volume besar. Namun, tantangan terbesarnya adalah distribusi kunci, di mana kunci rahasia harus dibagikan kepada penerima melalui saluran yang aman sebelum komunikasi dimulai. Contoh algoritmanya adalah AES (Advanced Encryption Standard)dan DES (Data Encryption Standard)
 
 Kriptografi asimetris, atau public-key cryptography, mengatasi masalah distribusi kunci dengan menggunakan sepasang kunci yang saling terkait secara matematis: kunci publik dan kunci privat. Kunci publik dapat disebarkan secara bebas untuk mengenkripsi pesan, namun hanya kunci privat pasangannya (yang hanya dimiliki oleh penerima) yang dapat mendekripsinya. Metode ini secara inheren lebih aman dalam hal pertukaran kunci dan juga memungkinkan fungsi tanda tangan digital dan otentikasi. Kelemahannya adalah prosesnya jauh lebih lambat dan membutuhkan daya komputasi yang lebih besar. Contoh algoritmanya adalah RSA (Rivest–Shamir–Adleman) dan ECC (Elliptic Curve Cryptography).
 
+![Diagram Kriptosistem](screenshots/perbandingan.png)
 
 ---
 
@@ -155,7 +156,9 @@ kriptografi simetris rentan terhadap kebocoran apabila si penyadap mengetahui ku
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.)
+
+Praktikum ini berhasil mengidentifikasi komponen dasar kriptosistem dan menyimulasikan proses enkripsi-dekripsi sederhana menggunakan Vigenere Cipher, yang merupakan contoh dari kriptografi simetris. Perbedaan utama antara kriptografi simetris (cepat, satu kunci, masalah distribusi) dan asimetris (lambat, pasangan kunci, unggul dalam otentikasi) berhasil diklasifikasikan, menegaskan bahwa pemilihan jenis kriptografi harus disesuaikan dengan kebutuhan kecepatan dan keamanan pertukaran kunci.
 
 ---
 
