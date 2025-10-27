@@ -65,15 +65,19 @@ def encrypt(text, key):
 
 ## 6. Hasil dan Pembahasan
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+- hasil sesuai ekspektas karena jawabnya sudah benar
 
-Hasil eksekusi program Caesar Cipher:
+Hasil eksekusi program aritmatika_modular:
+![Hasil aritmatika_modular](Screenshot/hasil_aritmatika_modular.png)
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
+Hasil eksekusi program gcd:  
+![Hasil gcd](Screenshot/hasil_gcd.png)
+
+Hasil eksekusi program euclidean:
+![Hasil euclidean](Screenshot/hasil_euclidean.png)
+
+Hasil eksekusi program diskrit_log:
+![Hasil diskrit_log](Screenshot/hasil_diskrit_log.png)
 )
 
 ---
@@ -88,6 +92,7 @@ Hasil eksekusi program Caesar Cipher:
 
 ## 8. Kesimpulan
 (Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Praktikum ini menunjukkan kemampuan untuk menerjemahkan teori matematika modular dan logaritma diskrit ke dalam kode program yang fungsional. Melalui implementasi algoritma seperti Euclidean untuk GCD, konsep-konsep abstrak ini berhasil diaplikasikan untuk menyelesaikan masalah komputasi yang konkret. Hasil eksekusi program yang sesuai ekspektasi membuktikan pemahaman praktis terhadap dasar-dasar operasi kriptografi.
 
 ---
 
@@ -103,9 +108,9 @@ Contoh:
 (Tuliskan bukti commit Git yang relevan.  
 Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week3-modmath-gcd
+Author: Indra Fata Nizar Azizi <indrafata980@gmail.com>
+Date:   2025-10-27
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week3-modmath-gcd: Modular Math 
 ```
