@@ -1,26 +1,37 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 4  
+Topik: Entropy & Unicity Distance  
+Nama: Indra Fata Nizar Azizi  
+NIM: 230202812  
+Kelas: 5IKRA  
 
 ---
 
 ## 1. Tujuan
 (Tuliskan tujuan pembelajaran praktikum sesuai modul.)
-
+1. Menyelesaikan perhitungan sederhana terkait entropi kunci.  
+2. Menggunakan teorema Euler pada contoh perhitungan modular & invers.  
+3. Menghitung **unicity distance** untuk ciphertext tertentu.  
+4. Menganalisis kekuatan kunci berdasarkan entropi dan unicity distance.  
+5. Mengevaluasi potensi serangan brute force pada kriptosistem sederhana. 
 ---
 
 ## 2. Dasar Teori
 (Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Berikut ringkasan teori relevan yang sesuai dengan tujuan pembelajaran yang Anda tulis:
+
+Dalam kriptografi, **entropi kunci** merupakan ukuran ketidakpastian atau kompleksitas suatu kunci yang digunakan dalam sistem kriptografi. Semakin tinggi entropi, semakin sulit bagi penyerang untuk menebak kunci melalui percobaan acak (brute force). Entropi biasanya dinyatakan dalam bit, dan untuk sebuah kunci yang dipilih secara uniform dari himpunan kunci (K), entropi (H(K)) didefinisikan sebagai (H(K) = log2 |K|), di mana (|K|) adalah jumlah kemungkinan kunci. Pemahaman entropi penting untuk mengevaluasi keamanan kunci terhadap serangan brute force.
+
+Teorema **Euler** dan perhitungan modular menjadi dasar dalam kriptografi modern, terutama pada algoritma berbasis bilangan bulat seperti RSA. Fungsi totien Euler (ϕ(n)) digunakan untuk menentukan jumlah bilangan bulat positif kurang dari (n) yang relatif prima terhadap (n), yang selanjutnya memungkinkan perhitungan invers modular. Misalnya, untuk mencari kunci privat (d) pada RSA, kita perlu menyelesaikan (e ⋅ d ≡ 1 ( mod ϕ(n)). Pemahaman modular arithmetic dan invers modular membantu mahasiswa menyelesaikan perhitungan sederhana dalam praktikum. 
+
+Konsep **unicity distance** mengukur panjang minimum ciphertext yang diperlukan agar plaintext dapat diidentifikasi secara unik dengan probabilitas tinggi. Unicity distance (U) dihitung sebagai (U = H (K)​/ D), di mana (D) adalah redundansi informasi dalam bahasa plaintext. Semakin besar entropi kunci dan semakin kecil redundansi plaintext, semakin tinggi unicity distance, sehingga ciphertext lebih tahan terhadap analisis kriptoanalisis. Dengan memahami hubungan antara entropi, unicity distance, dan jumlah percobaan brute force yang mungkin, mahasiswa dapat menilai kekuatan suatu kriptosistem secara praktis. 
+)
 
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
+(- Python 3.14  
+- Visual Studio Code 
 - Git dan akun GitHub  
 - Library tambahan (misalnya pycryptodome, jika diperlukan)  )
 
