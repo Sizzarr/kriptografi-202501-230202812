@@ -133,8 +133,10 @@ Hasil eksekusi program :
 output entorpy
 ![Hasil Output](screenshots/output_entorpy.png)
 
-output unicity distance
+
+output unicity distance                                                                                                       
 ![Hasil Output](screenshots/output_unicity_distance.png)
+
 
 output analisis burte force
 ![Hasil Output](screenshots/output_analisis_burte_force.png)
