@@ -130,9 +130,13 @@ Hasil pengujian sesuai dengan teori kriptografi.
 2. Algoritma modern seperti AES-128 memiliki entropi tinggi dan tidak realistis untuk diserang dengan brute force.
 
 Hasil eksekusi program :
-
+output entorpy
 ![Hasil Output](screenshots/output_entorpy.png)
+
+output unicity distance
 ![Hasil Output](screenshots/output_unicity_distance.png)
+
+output analisis burte force
 ![Hasil Output](screenshots/output_analisis_burte_force.png)
 )
 
