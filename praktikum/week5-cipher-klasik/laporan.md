@@ -2,8 +2,8 @@
 Minggu ke-: 5  
 Topik: Cipher Klasik (Caesar, Vigenère, Transposisi)  
 Nama: Indra Fata Nizar Azizi  
-NIM: 230202812 
-Kelas: 5IKRA  
+NIM: 230202812    
+Kelas: 5IKRA    
 
 ---
 
@@ -29,8 +29,7 @@ Cipher transposisi berbeda dengan Caesar dan Vigenère karena tidak mengubah hur
 ## 3. Alat dan Bahan
 (- Python 3.14  
 - Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Git dan akun GitHub  )
 
 ---
 
@@ -73,10 +72,36 @@ Hasil eksekusi program Caesar Cipher:
 
 ## 7. Jawaban Pertanyaan
 (Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
+- Pertanyaan 1:
+  Kelemahan utama Caesar Cipher
+  - Hanya ada 25 kemungkinan kunci
+  - Huruf yang sama pada plaintext selalu dienkripsi menjadi huruf yang sama, sehingga pola seperti pengulangan kata mudah        dikenali.
+  - Rentan terhadap analisis frekuensi
+  Kelemahan utama Vigenère Cipher
+  - Kalau panjang kunci pendek, pola enkripsi berulang dan bisa ditemukan lewat Kasiski examination atau Friedman test.
+  - Bisa diserang analisis frekuensi kelompok, setelah tahu panjang kunci, tiap posisi huruf bisa dianalisis
+  - Mudah dipecahkan dengan program brute force untuk kunci pendek.
+- Pertanyaan 2:Cipher klasik mudah diserang karena tidak menyembunyikan distribusi huruf dan tidak menghilangkan pola bahasa.
+- Pertanyaan 3:
+Cipher Substitusi (Substitution Cipher)
+Kelebihan
+-Mudah dipahami dan diterapkan
+-Cepat dalam enkripsi/dekripsi
+-Bisa menghasilkan ciphertext yang terlihat acak
+Kelemahan
+-Rentan terhadap analisis frekuensi
+-Polanya tetap
+-Kunci sering mudah ditebak
+Cipher Transposisi (Transposition Cipher)
+-Tidak dapat dianalisis dengan frekuensi huruf
+-Lebih sulit ditebak strukturnya
+-Dapat digabung dengan substitusi
+Kelemahan
+-Masih bisa diserang dengan analisis pola posisi
+-Perlu pengaturan posisi atau grid
+-Tidak mengubah huruf sama sekali
 )
----
+--- 
 
 ## 8. Kesimpulan
 (Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
