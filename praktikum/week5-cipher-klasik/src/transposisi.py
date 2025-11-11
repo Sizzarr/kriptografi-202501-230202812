@@ -1,5 +1,3 @@
-# Program Transposisi Cipher Sederhana (Interaktif)
-
 def transposisi_enkripsi(plaintext, kunci):
     ciphertext = [''] * kunci
     for col in range(kunci):
@@ -11,10 +9,9 @@ def transposisi_enkripsi(plaintext, kunci):
 
 
 def transposisi_dekripsi(ciphertext, kunci):
-    # Hitung jumlah kolom dan baris
-    num_of_columns = len(ciphertext) // kunci
+    num_of_columns = int(len(ciphertext) / kunci + 0.9999)  # pembulatan ke atas
     num_of_rows = kunci
-    num_of_shaded_boxes = len(ciphertext) % kunci
+    num_of_shaded_boxes = (num_of_columns * num_of_rows) - len(ciphertext)
 
     plaintext = [''] * num_of_columns
     col = 0
@@ -33,7 +30,7 @@ def transposisi_dekripsi(ciphertext, kunci):
 
 # === Mode interaktif ===
 print("=== Program Transposisi Cipher ===")
-teks = input("Masukkan teks: ").replace(" ", "")  # hapus spasi agar lebih jelas
+teks = input("Masukkan teks: ").replace(" ", "")
 kunci = int(input("Masukkan kunci (angka): "))
 mode = input("Mode (e = enkripsi, d = dekripsi): ").lower()
 
