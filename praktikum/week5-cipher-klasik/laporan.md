@@ -36,57 +36,79 @@ Cipher transposisi berbeda dengan Caesar dan Vigenère karena tidak mengubah hur
 ## 4. Langkah Percobaan
 (Tuliskan langkah yang dilakukan sesuai instruksi.  
 Contoh format:
-Langkah 1 — Implementasi Caesar Cipher
-1. Mulai program Caesar_cipher.py.
-2. Minta pengguna memasukkan:
-    -Teks yang akan dienkripsi atau didekripsi
-    -Nilai shift (pergeseran huruf)
-    -Mode (e untuk enkripsi, d untuk dekripsi)
-3. Jika mode = d, ubah shift menjadi negatif.
-4.Buat variabel kosong bernama hasil.
-5.Untuk setiap karakter dalam teks:
-    -Jika huruf alfabet:
-    >Tentukan nilai dasar ('A' atau 'a').
-    >Geser posisi huruf dengan rumus: (kode_huruf + shift) mod 26
-    >Ubah kembali ke huruf.
-    >Jika bukan huruf, tambahkan langsung ke hasil tanpa perubahan.
-6.Tampilkan hasil enkripsi atau dekripsi.
-7.Selesai.
+## 🧩 Langkah 1 — Implementasi Caesar Cipher
 
-Langkah 2 — Implementasi igenère Cipher
-1. Mulai program Vigenère.py.py.
-2. Minta pengguna memasukkan:
-    -Teks yang akan dienkripsi atau didekripsi
-    -Kunci (key)
-    -Mode (e untuk enkripsi, d untuk dekripsi)
-3.Ubah semua huruf kunci menjadi huruf kapital.
-4.Buat variabel kosong bernama hasil
-5.Untuk setiap karakter dalam teks:
-    -Jika huruf alfabet:
-    >Tentukan nilai shift berdasarkan huruf kunci: shift = (kode huruf kunci) - 'A'
-    >Geser huruf teks dengan rumus: (kode huruf + shift) mod 26
-    >Tambahkan hasil ke ciphertext.
-    >Pindah ke huruf kunci berikutnya.
-    >Jika bukan huruf, tambahkan langsung tanpa perubahan.
-6.Tampilkan hasil enkripsi atau dekripsi.
-7.Selesai.
+**File:** `Caesar_cipher.py`
 
-Langkah 3 — Implementasi Transposisi Sederhana
-1. Mulai program transposisi.py.
-2. Minta pengguna memasukkan:
-    -Teks yang akan dienkripsi atau didekripsi
-    -Kunci (key)
-    -Mode (e untuk enkripsi, d untuk dekripsi)
-3.Buat daftar kosong ciphertext dengan panjang sebanyak kunci.
-4.Untuk setiap kolom dari 0 hingga kunci - 1:
--Ambil huruf dari plaintext mulai dari posisi kolom tersebut.
--Lewati huruf setiap kunci langkah (misalnya setiap 3 huruf jika kunci = 3).
--Simpan huruf-huruf tersebut ke dalam ciphertext[col].
-5.Gabungkan semua elemen ciphertext menjadi satu string.
-6.Hasilnya adalah teks terenkripsi (ciphertext).
-7.Tampilkan hasil enkripsi.
-8.Selesai.
+### Langkah-langkah:
 
+1. Mulai program `Caesar_cipher.py`.
+2. Minta pengguna memasukkan:
+   - **Teks** yang akan dienkripsi atau didekripsi  
+   - **Nilai shift** (pergeseran huruf)  
+   - **Mode** (`e` untuk enkripsi, `d` untuk dekripsi)
+3. Jika `mode = d`, ubah shift menjadi negatif.
+4. Buat variabel kosong bernama `hasil`.
+5. Untuk setiap karakter dalam teks:
+   - Jika huruf alfabet:
+     - Tentukan nilai dasar (`'A'` atau `'a'`).
+     - Geser posisi huruf dengan rumus:  
+       `(kode_huruf + shift) mod 26`
+     - Ubah kembali ke huruf.
+   - Jika bukan huruf, tambahkan langsung ke hasil tanpa perubahan.
+6. Tampilkan hasil enkripsi atau dekripsi.
+7. **Selesai.**
+
+---
+
+## 🔑 Langkah 2 — Implementasi Vigenère Cipher
+
+**File:** `Vigenere.py`
+
+### Langkah-langkah:
+
+1. Mulai program `Vigenere.py`.
+2. Minta pengguna memasukkan:
+   - **Teks** yang akan dienkripsi atau didekripsi  
+   - **Kunci (key)**  
+   - **Mode** (`e` untuk enkripsi, `d` untuk dekripsi)
+3. Ubah semua huruf kunci menjadi huruf kapital.
+4. Buat variabel kosong bernama `hasil`.
+5. Untuk setiap karakter dalam teks:
+   - Jika huruf alfabet:
+     - Tentukan nilai **shift** berdasarkan huruf kunci:  
+       `shift = (kode huruf kunci) - 'A'`
+     - Geser huruf teks dengan rumus:  
+       `(kode huruf + shift) mod 26`
+     - Tambahkan hasil ke `ciphertext`.
+     - Pindah ke huruf kunci berikutnya.
+   - Jika bukan huruf, tambahkan langsung tanpa perubahan.
+6. Tampilkan hasil enkripsi atau dekripsi.
+7. **Selesai.**
+
+---
+
+## 🔄 Langkah 3 — Implementasi Transposisi Cipher Sederhana
+
+**File:** `transposisi.py`
+
+### Langkah-langkah:
+
+1. Mulai program `transposisi.py`.
+2. Minta pengguna memasukkan:
+   - **Teks** yang akan dienkripsi atau didekripsi  
+   - **Kunci (key)**  
+   - **Mode** (`e` untuk enkripsi, `d` untuk dekripsi)
+3. Buat daftar kosong `ciphertext` dengan panjang sebanyak `kunci`.
+4. Untuk setiap kolom dari `0` hingga `kunci - 1`:
+   - Ambil huruf dari plaintext mulai dari posisi kolom tersebut.
+   - Lewati huruf setiap `kunci` langkah  
+     (misalnya setiap 3 huruf jika `kunci = 3`).
+   - Simpan huruf-huruf tersebut ke dalam `ciphertext[col]`.
+5. Gabungkan semua elemen `ciphertext` menjadi satu string.
+6. Hasilnya adalah teks terenkripsi (`ciphertext`).
+7. Tampilkan hasil enkripsi atau dekripsi.
+8. **Selesai.**
 ---
 
 ## 5. Source Code
@@ -104,15 +126,18 @@ def encrypt(text, key):
 
 ## 6. Hasil dan Pembahasan
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
-
+ 
 Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
+![Hasil Eksekusi](Screanshoot/caesar.png)
+
+Hasil eksekusi program vignere Cipher:
+
+![Hasil Input](Screanshoot/vegnere.png)
+
+Hasil eksekusi program transposisi:
+
+![Hasil Output](Screanshoot/transposisi.png)
 )
 
 ---
