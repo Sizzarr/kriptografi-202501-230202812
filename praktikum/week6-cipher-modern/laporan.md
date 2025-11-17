@@ -341,7 +341,7 @@ if __name__ == "__main__":
 ## 6. Hasil dan Pembahasan
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
 
-Hasil DES
+Hasil DES                                                                                                                     
 ![Hasil DES](Screenshots/des.png)
 
 Hasil RSA
