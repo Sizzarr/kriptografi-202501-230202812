@@ -341,14 +341,14 @@ if __name__ == "__main__":
 ## 6. Hasil dan Pembahasan
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
 
-Hasil DSA
-![Hasil DSA](screenshots/dsa.png)
+Hasil DES
+![Hasil DSA](Screenshots/des.png)
 
 Hasil RSA
-![Hasil RSA](screenshots/rsa.png)
+![Hasil RSA](Screenshots/rsa.png)
 
 Hasil AES
-![Hasil AES](screenshots/Aes.png)
+![Hasil AES](Screenshots/aes.png)
 )
 
 ---
