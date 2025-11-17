@@ -342,7 +342,7 @@ if __name__ == "__main__":
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
 
 Hasil DES
-![Hasil DSA](Screenshots/des.png)
+![Hasil DES](Screenshots/des.png)
 
 Hasil RSA
 ![Hasil RSA](Screenshots/rsa.png)
