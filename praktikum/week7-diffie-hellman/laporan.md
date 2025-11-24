@@ -20,7 +20,7 @@ Kelas: 5IKRA
 (Ringkas teori relevan (cukup 2–3 paragraf).  
 Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
 
-Protokol Diffie-Hellman adalah metode pertukaran kunci kriptografi yang memungkinkan dua pihak untuk membuat kunci rahasia bersama melalui saluran komunikasi publik yang tidak aman. Protokol ini didasarkan pada kesulitan komputasional problem logaritma diskrit, yaitu mencari nilai x dari persamaan g^x ≡ y (mod p), di mana p adalah bilangan prima besar dan g adalah generator. Kedua pihak (Alice dan Bob) masing-masing memilih bilangan rahasia pribadi, kemudian menukar hasil perhitungan publik untuk menghasilkan kunci rahasia yang identik tanpa pernah mengirimkan kunci tersebut secara langsung.
+Protokol Diffie-Hellman adalah metode pertukaran kunci kriptografi yang memungkinkan dua pihak untuk membuat kunci rahasia bersama melalui saluran komunikasi publik yang tidak aman. Protokol ini didasarkan pada kesulitan komputasional problem logaritma diskrit, yaitu mencari nilai x dari persamaan g^x = y (mod p), di mana p adalah bilangan prima besar dan g adalah generator. Kedua pihak (Alice dan Bob) masing-masing memilih bilangan rahasia pribadi, kemudian menukar hasil perhitungan publik untuk menghasilkan kunci rahasia yang identik tanpa pernah mengirimkan kunci tersebut secara langsung.
 
 Keamanan protokol Diffie-Hellman bergantung pada pemilihan parameter yang tepat: bilangan prima p harus cukup besar (minimal 2048-bit untuk standar modern) dan generator g harus dipilih dengan cermat. Meskipun matematikanya kuat, protokol ini rentan terhadap serangan Man-in-the-Middle (MITM) karena tidak menyediakan autentikasi identitas. Penyerang dapat memposisikan diri di antara Alice dan Bob, melakukan pertukaran kunci terpisah dengan masing-masing pihak, sehingga dapat mendekripsi dan memodifikasi pesan tanpa terdeteksi. Oleh karena itu, implementasi praktis memerlukan mekanisme autentikasi tambahan seperti sertifikat digital atau tanda tangan digital.
 
@@ -30,7 +30,7 @@ Keamanan protokol Diffie-Hellman bergantung pada pemilihan parameter yang tepat:
 (- Python 3.14  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Library random  )
 
 ---
 
@@ -367,16 +367,21 @@ if __name__ == "__main__":
 
 ## 6. Hasil dan Pembahasan
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+1. Skenario Normal: Alice dan Bob berhasil mendapatkan kunci rahasia yang identik (sama-sama mendapat nilai 2) tanpa pernah mengirimkan kunci privat mereka. Ini membuktikan protokol Diffie-Hellman bekerja dengan benar.
+2. Skenario MITM: Eve berhasil mengintersepsi komunikasi dan mendapatkan dua kunci berbeda yang masing-masing cocok dengan Alice dan Bob. Alice mendapat kunci 9 (sama dengan kunci Eve-Alice), Bob mendapat kunci 16 (sama dengan kunci Eve-Bob), yang membuktikan kerentanan terhadap serangan MITM.
+3. Validasi Matematis: Semua perhitungan modular exponentiation menghasilkan nilai yang konsisten dan dapat diverifikasi secara matematis.
 
-Hasil eksekusi program Caesar Cipher:
-![Hasil Output](screenshots/output.png)
+SIMULASI DIFFIE-HELLMAN NORMAL:                                               
+![Hasil Output](screenshots/normal.png)
 
-![Hasil Output](screenshots/output.png)
+SIMULASI SERANGAN MAN-IN-THE-MIDDLE (MITM)                                    
+![Hasil Output](screenshots/mitm.png)
 
-![Hasil Output](screenshots/output.png)
+ALUR KOMUNIKASI DENGAN MITM ATTACK                                            
+![Hasil Output](screenshots/MITM_ATTACK.png)
+
+MITIGASI SERANGAN MITM
+![Hasil Output](screenshots/MITIGASI.png)
 )
 
 ---
