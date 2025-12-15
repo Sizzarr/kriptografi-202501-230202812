@@ -40,6 +40,39 @@ Pendekatan keamanan berlapis dengan menggabungkan algoritma RSA dan DSA. RSA dig
 (Tuliskan langkah yang dilakukan sesuai instruksi.  
 Contoh format:
 
+Langkah 1: Generate Key dan Buat Tanda Tangan
+1. Persiapan Rumus yang akan dipakai "Alat Hitung"
+   - fungsi gcd(a, b) : untuk mencari faktor persekutuan (memastikan angka kunci unik)
+   - fungsi multiplicative_inverse : untuk menghitung kunci privat
+2. Menentukan Angka yang akan digunakan
+   - Program menetapkan dua angka prima: p = 61 dan q = 53, nanti angka ini akan dimasukan kedalam rumus yang sudah   ditentukan sebelumnya
+3. Pembuatan Kunci (Key Generation)
+   - memanggil fungsi generate_keypair(p, q) dan memasukanya ke rumus untuk menadaptkan kunci publik dan kuci private
+4. Menulis Pesan & Tanda Tangan
+   - misal kita ingin mengirim pesan "Transfer Gaji"
+   - Program memanggil fungsi sign_message disini pesan kita akan jadi kode angka unik (SHA-256).
+   - Kode angka itu dihitung dengan rumus: $Angka^{d} \pmod n$
+   - Hasil langkah ini terciptalah sebuah deretan angka yang disebut Digital Signature.
+  
+Langkah 2 — Verifikasi Tanda Tangan
+1. Penerima Memeriksa Pesan (Verification)
+   - Penerima menjalankan verify_signature
+   - Penerima mengambil pesan "Transfer Gaji" dan mengubahnya jadi angka hash.
+   - Penerima mengambil Signature, lalu menghitungnya dengan Kunci Publik ($Signature^{e} \pmod n$).
+   - Bandingkan: Apakah Hash buatan sendiri == Hash hasil buka Signature? Karena pesannya jujur, hasilnya SAMA.
+   - Output Layar: [HASIL]: Tanda Tangan VALID!
+  
+Langkah 3 — Uji Modifikasi Pesan
+1. Simulasi Kejahatan
+   - Hacker mengubah pesan menjadi "Transfer Gaji (Ditambah Bonus)
+   - Hacker punya pesan baru, tapi tidak punya Kunci Privat (d). Jadi dia tidak bisa membuat Signature baru yang pas. Dia terpaksa menempelkan Signature lama.
+2. Verifikasi Pesan Palsu
+   - Penerima menerima pesan palsu tersebut dan menjalankan verify_signature lagi
+   - Hitung Hash Baru: Penerima menghitung hash dari "Transfer Gaji (Ditambah Bonus)". Hasil angkanya pasti beda jauh dari pesan asli.
+   - Buka Signature Lama: Penerima membuka Signature lama dengan Kunci Publik. Hasilnya adalah hash pesan asli.
+   - Bandingkan: Hash Pesan Palsu (Baru) TIDAK SAMA DENGAN Hash Pesan Asli (dari Signature).
+   - Output Layar: [HASIL]: Tanda Tangan TIDAK VALID!
+   
 
 ---
 
@@ -47,11 +80,12 @@ Contoh format:
 (Salin kode program utama yang dibuat atau dimodifikasi.  
 Gunakan blok kode:
 
+Langkah 1 — Generate Key dan Buat Tanda Tangan
 ```python
 import hashlib
 import random
 
-# --- FUNGSI MATEMATIKA DASAR (SESUAI TEORI) ---
+# --- FUNGSI MATEMATIKA DASAR ---
 
 def gcd(a, b):
     """Mencari Faktor Persekutuan Terbesar (Greatest Common Divisor)"""
@@ -130,7 +164,9 @@ def sign_message(message, private_key):
     signature = pow(hash_int, d, n)
     
     return signature
-
+```
+Langkah 2 — Verifikasi Tanda Tangan
+```python
 def verify_signature(message, signature, public_key):
     """
     Langkah 3: Verifying (Verifikasi)
@@ -153,7 +189,10 @@ def verify_signature(message, signature, public_key):
         return True
     else:
         return False
+```
 
+Langkah 3 — Uji Modifikasi Pesan
+```python
 # --- BAGIAN UTAMA (MAIN) ---
 if __name__ == "__main__":
     print("=== PROGRAM DIGITAL SIGNATURE RSA (MANUAL) ===")
@@ -196,34 +235,40 @@ if __name__ == "__main__":
     else:
         print("   [HASIL]: Tanda Tangan TIDAK VALID! (Integritas Data Terjaga)")
 ```
-)
 
----
 
 ## 6. Hasil dan Pembahasan
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
 
-Hasil eksekusi program Caesar Cipher:
+Hasil eksekusi program siganture.py :
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
+![Hasil Output](screenshots/signature.png)
 )
 
+---
 ---
 
 ## 7. Jawaban Pertanyaan
 (Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
+- Pertanyaan 1: Perbedaan utamanya terletak pada tujuannya dan urutan penggunaan kunci
+  1. Tanda tangan digital RSA
+     - tujuan : Membuktikan keaslian pengirim dan keutuhan pesan.
+     - Proses : menggunakan Kunci Privat (d) untuk menandatangani (mengacak), dan orang lain menggunakan Kunci Publik (e) untuk memverifikasi.
+  3. Enkripsi RSA
+     - tujuan : Menjaga kerahasiaan pesan agar tidak bisa dibaca orang lain
+     - Proses : Orang lain menggunakan Kunci Publik Anda untuk mengunci pesan, dan hanya Anda yang bisa membuka pesan tersebut dengan Kunci Privat.
+- Pertanyaan 2:
+  1. Tanda tangan digital tidak dibuat dari pesan mentah, melainkan dari "sidik jari" (hash) pesan tersebut. Jika satu huruf saja diubah pada pesan asli, nilai hash-nya akan berubah drastis.
+  2. Secara matematis, hanya kunci privat (d) pasangan dari kunci publik (e) yang bisa menghasilkan angka signature yang valid. Karena kunci privat hanya dimiliki oleh pemilik asli, maka penerima yakin pesan itu benar-benar dari pemilik tersebut
+
+- Pertanyaan 3: Peran CA adalah memindahkan kepercayaan. Alih-alih setiap orang harus saling percaya secara manual (yang mustahil dilakukan di internet global), kita cukup percaya pada segelintir Lembaga CA. Jika CA bilang "Ini kunci si Budi", maka sistem kita percaya itu Budi.
 )
 ---
 
 ## 8. Kesimpulan
 (Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+
+Percobaan ini membuktikan bahwa Tanda Tangan Digital RSA berhasil menjamin integritas dan otentikasi, di mana setiap modifikasi sekecil apa pun pada pesan akan menyebabkan ketidakcocokan nilai hash saat verifikasi. Hal ini menunjukkan bahwa hanya pemegang Kunci Privat asli yang dapat membuat tanda tangan yang valid, sehingga penerima dapat yakin bahwa pesan tersebut murni dan berasal dari pengirim yang sah.
 
 ---
 
