@@ -1,15 +1,17 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 10  
+Topik: [Public Key Infrastructure (PKI & Certificate Authority)]  
+Nama: [Indra Fata Nizar Azizi]  
+NIM: [230202812]  
+Kelas: [5IKRA]  
 
 ---
 
 ## 1. Tujuan
 (Tuliskan tujuan pembelajaran praktikum sesuai modul.)
-
+1. Membuat sertifikat digital sederhana.  
+2. Menjelaskan peran Certificate Authority (CA) dalam sistem PKI.  
+3. Mengevaluasi fungsi PKI dalam komunikasi aman (contoh: HTTPS, TLS).  
 ---
 
 ## 2. Dasar Teori
@@ -19,7 +21,7 @@ Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
+(- Python 3.14  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
 - Library tambahan (misalnya pycryptodome, jika diperlukan)  )
@@ -87,9 +89,9 @@ Contoh:
 (Tuliskan bukti commit Git yang relevan.  
 Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+week10-pki
+Author: Indra Fata Nizar Azizi <email>
+Date:   2025-12-15
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week10-pki: Public Key Infrastructure (PKI & Certificate Authority)
 ```
