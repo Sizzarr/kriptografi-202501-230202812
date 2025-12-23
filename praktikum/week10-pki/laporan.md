@@ -1,4 +1,3 @@
-<img width="1208" height="120" alt="{25104BE7-AA8B-4C76-8D43-57FE9B5DF0BB}" src="https://github.com/user-attachments/assets/27001c22-46e1-421e-9272-5dd790200417" /># Laporan Praktikum Kriptografi
 Minggu ke-: 10  
 Topik: [Public Key Infrastructure (PKI & Certificate Authority)]  
 Nama: [Indra Fata Nizar Azizi]  
