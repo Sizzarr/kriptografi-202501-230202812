@@ -46,12 +46,12 @@ Keamanannya kuat secara teori jika penyerang hanya punya kurang dari k shares, m
    ```
 2. Buat file program utama:
    ```
-   src/sss_shamir.py
+   src/secret_sharing.py
    ```
 3. Salin source code SSS ke file tersebut (lihat bagian **5. Source Code**).
 4. Jalankan program:
    ```
-   python src/sss_shamir.py
+   python src/secret_sharing.py
    ```
 5. Isi input saat diminta:
    - `secret` (contoh: `RAHASIA-TEST-123`)
@@ -308,10 +308,13 @@ Ringkasan uji contoh:
 | Uji gagal (kurang share) | (3,5) | 2 | Error | Tidak memenuhi k |
 
 Lampiran screenshot:
+Hasil Input                                                                                                           
+![Hasil Input](screenshots/input.png)                                                                                    
+Daftar Shares                                                                                                         
+![Daftar Shares](screenshots/shares.png)                                                                                               
+Hasil Rekonstruksi                                                                                                    
+![Hasil Rekonstruksi](screenshots/recover.png)                                                                        
 
-![Hasil Input](screenshots/input.png)  
-![Daftar Shares](screenshots/shares.png)  
-![Hasil Rekonstruksi](screenshots/recover.png)  
 
 ---
 
@@ -345,7 +348,7 @@ Contoh:)
 
 ```
 week11-secret-sharing
-Author: Indra Fata Nizar Azizi <email>
+Author: Indra Fata Nizar Azizi <indrafata980@gmail.com>
 Date:   2025-12-30
 
     week11-secret-sharing
