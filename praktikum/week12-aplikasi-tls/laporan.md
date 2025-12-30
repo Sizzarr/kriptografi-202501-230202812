@@ -1,15 +1,18 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 12  
+Topik: [Aplikasi TLS & E-commerce]  
+Nama: [Indra Fata Nizar Azizi]  
+NIM: [230202812]  
+Kelas: [5IKRA]  
 
 ---
 
 ## 1. Tujuan
 (Tuliskan tujuan pembelajaran praktikum sesuai modul.)
-
+Setelah mengikuti praktikum ini, mahasiswa diharapkan mampu:  
+1. Menganalisis penggunaan kriptografi pada **email** dan **SSL/TLS**.  
+2. Menjelaskan enkripsi dalam transaksi **e-commerce**.  
+3. Mengevaluasi isu **etika & privasi** dalam penggunaan kriptografi di kehidupan sehari-hari.
 ---
 
 ## 2. Dasar Teori
@@ -87,9 +90,9 @@ Contoh:
 (Tuliskan bukti commit Git yang relevan.  
 Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+week12-aplikasi-tls
+Author: Indra Fata Nizar Azizi <indrafata980@gmail.com>
+Date:   2025-12-30
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week12-aplikasi-tls
 ```
