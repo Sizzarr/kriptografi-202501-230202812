@@ -19,22 +19,25 @@ Setelah mengikuti praktikum ini, mahasiswa diharapkan mampu:
 (Ringkas teori relevan (cukup 2–3 paragraf).  
 Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
 
+Aplikasi TLS & E-commerce membahas bagaimana kriptografi dipakai untuk mengamankan komunikasi digital, khususnya pada email dan koneksi web. Pada email, konsep keamanan umumnya mencakup kerahasiaan isi pesan dan pembuktian keaslian pengirim melalui enkripsi dan tanda tangan digital (misalnya konsep PGP/S/MIME). Sementara pada TLS (SSL/TLS), kriptografi bekerja lewat proses handshake untuk memverifikasi identitas server menggunakan sertifikat, lalu membentuk kunci sesi agar pertukaran data selanjutnya terenkripsi dan terlindungi dari penyadapan maupun manipulasi selama transmisi.
+
+Dalam konteks e-commerce, TLS menjadi lapisan utama yang melindungi data sensitif seperti kredensial login, alamat, hingga detail transaksi saat dikirim antara client dan server. Namun keamanan transaksi tidak berhenti di “ikon gembok” browser. Sistem e-commerce juga menerapkan prinsip kriptografi di sisi aplikasi, seperti penyimpanan password menggunakan hash yang aman, penggunaan token/sesi untuk autentikasi, serta mekanisme integritas data transaksi agar nilai pembayaran atau identitas pesanan tidak bisa diubah pihak lain. Kombinasi perlindungan jalur komunikasi dan pengamanan data aplikasi ini memastikan transaksi tetap rahasia, utuh, dan dapat dipercaya.
+
+Selain aspek teknis, penggunaan kriptografi menimbulkan isu etika dan privasi di kehidupan sehari-hari. Enkripsi melindungi pengguna dari pencurian data dan pelacakan, tetapi juga memunculkan perdebatan soal akses pihak tertentu, keamanan metadata (pola komunikasi bisa tetap terlihat meski isi terenkripsi), serta tanggung jawab penyedia layanan untuk tidak mengumpulkan data berlebihan. Karena itu evaluasi tidak hanya menilai “apakah terenkripsi”, tetapi juga apakah penerapan kriptografi mendukung prinsip privasi, transparansi, dan perlindungan pengguna secara nyata, bukan sekadar formalitas keamanan.
+
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+(- Visual Studio Code 
+- Git dan akun GitHub
+- browser chrome )
 
 ---
 
 ## 4. Langkah Percobaan
 (Tuliskan langkah yang dilakukan sesuai instruksi.  
 Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+
 
 ---
 
