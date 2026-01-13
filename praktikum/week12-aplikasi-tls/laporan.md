@@ -79,6 +79,12 @@ Contoh format:
     - Man-in-the-Middle (MITM): penyerang di jaringan (Wi-Fi publik) bisa menyadap atau mengubah data transaksi.
     - Session hijacking: cookie sesi bisa dicuri sehingga akun pengguna dapat diambil alih.
     - Phishing/injection: halaman dapat dimodifikasi untuk mengarahkan pengguna mengisi data ke pihak penyerang.
+ 
+### Langkah 3 — Analisis Etika & Privasi
+- Email terenkripsi (PGP/S/MIME) menjaga isi pesan tetap rahasia dan dapat menambah tanda tangan digital untuk menjamin autentikasi dan integritas.
+- Namun etika & privasi muncul pada:
+-   Perusahaan vs privasi karyawan: Audit keamanan mungkin perlu, tetapi mendekripsi isi email karyawan tanpa aturan jelas melanggar privasi. Solusi yang lebih etis biasanya berupa kebijakan transparan (misal: email kantor untuk urusan kerja), logging terbatas, dan prosedur legal/audit yang jelas.
+-   Pemerintah vs hak privasi warga: Pengawasan komunikasi dapat membantu penegakan hukum, tetapi berisiko disalahgunakan (mass surveillance). Kebijakan yang lebih seimbang biasanya menekankan proses hukum (izin pengadilan), ruang lingkup terbatas, dan akuntabilitas.
 ---
 
 ## 5. Source Code
@@ -104,10 +110,16 @@ def encrypt(text, key):
 | Masa berlaku           | 29 Des 2025 → 30 Jan 2027                             | 11 Jun 2025 → 04 Jul 2026                  |
 | Petunjuk algoritma     | RSA + SHA-256                                         | RSA + SHA-256                              |
 
-
+Lazada
 ![Hasil lazada](screenshots/lazada.png)
+
+Tokopedia
 ![Hasil tokopedia](screenshots/tokopedia.png)
+
+web https
 ![Hasil tls](screenshots/tls.png)
+
+web http
 ![Hasil non tls](screenshots/nontls.png)
 )
 
