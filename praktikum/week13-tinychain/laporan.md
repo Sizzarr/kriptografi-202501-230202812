@@ -102,7 +102,7 @@ my_chain.add_block(Block(2, "", "Transaksi B → C: 5 Coin"))
 - Jelaskan apakah hasil sesuai ekspektasi.  
 - Bahas error (jika ada) dan solusinya. 
 
-Hasil eksekusi program Caesar Cipher:
+Hasil eksekusi program tinychain:
 
 ![Hasil Eksekusi](screenshots/hash.png)
 
