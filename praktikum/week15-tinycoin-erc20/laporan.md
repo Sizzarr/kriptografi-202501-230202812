@@ -1,14 +1,18 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 15  
+Topik: [Proyek Kelompok – TinyCoin ERC20]  
+Nama: [Indra Fata Nizar Azizi]  
+NIM: [230202812]  
+Kelas: [5IKRA]  
 
 ---
 
 ## 1. Tujuan
 (Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+
+1. Mengembangkan proyek sederhana berbasis algoritma kriptografi.  
+2. Mendokumentasikan proses implementasi proyek ke dalam repository Git.  
+3. Menyusun laporan teknis hasil proyek akhir. 
 
 ---
 
@@ -87,9 +91,9 @@ Contoh:
 (Tuliskan bukti commit Git yang relevan.  
 Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit week15-tinycoin-erc20
+Author: Indra Fata Nizar Azizi <indrafata980@gmail.com>
+Date:   2026-01-24
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week15-tinycoin-erc20:  )
 ```
